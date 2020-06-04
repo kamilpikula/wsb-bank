@@ -11,7 +11,7 @@ class Client < ApplicationRecord
   def format_name
     self.first_name = self.first_name.upcase
     self.last_name = self.last_name.upcase
-    self.middle_name = self.last_name.upcase
+    self.middle_name = self.middle_name.upcase
   end
 
   def to_s

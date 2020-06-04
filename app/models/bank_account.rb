@@ -1,5 +1,6 @@
 class BankAccount < ApplicationRecord
   belongs_to :client
+  has_many :account_transactions
 
   validates :client, presence: true
   validates :account_number, presence: true, uniqueness: true

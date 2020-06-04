@@ -1,0 +1,16 @@
+%h1 Konta bankowe
+
+%table.table.table-bordered
+  %thead
+    %tr
+      %th Numer konta
+      %th Kwota
+      %th Akcja
+  %tbody
+    - @bank_accounts.each do |bank_account|
+      %tr
+        %td #{bank_account.account_number}
+        %td #{number_to_currency(bank_account.balance, unit: "PLN")}
+        %td
+          = link_to bank_account_path(bank_account.id), class: "btn btn-primary" do
+            Pokaż
