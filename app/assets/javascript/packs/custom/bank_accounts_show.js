@@ -7,14 +7,21 @@ const Show = (() => {
       modalTransaction,
       btnSave,
       inputAmount,
-      selectTransactionType;
+      selectTransactionType,
+      parameters,
+      bankAccountId,
+      notification;
 
+  const url = "/api/v1/bank_accounts/new_transaction";
   const fetchElements = () => {
     btnNewTransaction = document.querySelector("#btn-new-transaction");
     modalTransaction = document.querySelector("#modal-transaction");
     btnSave = document.querySelector("#btn-transaction-save");
     inputAmount = document.querySelector("#input-amount");
     selectTransactionType = document.querySelector("#select-transaction-type");
+    parameters = document.querySelector("#parameters");
+    notification = document.querySelector(".notification");
+    bankAccountId = parameters.dataset.bankAccountId;
   };
 
   const disableControls = () => {
@@ -35,7 +42,32 @@ const Show = (() => {
     });
     
     btnSave.addEventListener("click", () => {
+      const amount = inputAmount.value;
+      const transactionType = selectTransactionType.value;
       disableControls();
+
+      console.log(transactionType);
+
+      notification.innerHTML = ("");
+      $.ajax({
+        url: url,
+        method: 'POST',
+        dataType: 'json',
+        data: {
+          amount: amount,
+          transactionType: transactionType,
+          bankAccountId: bankAccountId
+        }, success: function(response) {
+          window.location.href = "/bank_accounts/" + bankAccountId;
+        },
+        error: function(response) {
+          notification.innerHTML = (JSON.parse(response.responseText).errors.join());
+          enableControls();
+        }
+      })
+
+
+
     })
   }
 
