@@ -15,4 +15,8 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 
 import 'bootstrap'
+import 'stisla/assets/js/stisla'
+import 'stisla/assets/js/scripts'
+import 'stisla/assets/js/custom'
+
 import "../packs/custom/bank_accounts_show"
