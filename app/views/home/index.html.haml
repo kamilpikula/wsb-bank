@@ -7,6 +7,12 @@
 
 .row
   .col-md-12
+    = link_to clients_path do
+      Klienci banku
+    %hr
+    = link_to new_client_path do
+      Nowy klient
+    %hr
     = link_to bank_accounts_path do
       Konta bankowe
     %hr

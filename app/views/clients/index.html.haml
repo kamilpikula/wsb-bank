@@ -1,0 +1,6 @@
+%h1 Klienci
+
+= link_to new_client_path, class: "btn btn-primary" do
+  Nowy klient
+
+= render partial: "list", locals: { clients: @clients }

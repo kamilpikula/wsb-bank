@@ -1,0 +1,16 @@
+%table.table.table-bordered
+  %thead
+    %tr
+      %th Numer klienta
+      %th Nazwa
+      %th Liczba kont bankowych
+      %th Akcja
+  %tbody
+    - @clients.each do |client|
+      %tr
+        %td #{client.client_number}
+        %td #{client.to_s}
+        %td #{client.num_accounts}
+        %td
+          = link_to client_path(client.id), class: "btn btn-primary" do
+            Pokaż
