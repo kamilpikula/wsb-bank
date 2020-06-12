@@ -11,6 +11,7 @@ gem 'webpacker', '~> 4.0'
 gem 'jbuilder', '~> 2.7'
 gem 'haml', '~> 5.1', '>= 5.1.2'
 gem 'simple_form', '~> 5.0', '>= 5.0.2'
+gem 'devise'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 
