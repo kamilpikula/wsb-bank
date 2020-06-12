@@ -15,6 +15,8 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 
 import 'bootstrap'
+import "@fortawesome/fontawesome-free/js/all";
+import "jquery.nicescroll/dist/jquery.nicescroll"
 import 'stisla/assets/js/stisla'
 import 'stisla/assets/js/scripts'
 import 'stisla/assets/js/custom'
