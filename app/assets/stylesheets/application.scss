@@ -18,3 +18,7 @@
  @import '../../../node_modules/@fortawesome/fontawesome-free/css/all';
  @import "../../../node_modules/stisla/assets/css/style";
  @import "../../../node_modules/stisla/assets/css/components";
+
+ .card, .main-sidebar {
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.10);
+ }
