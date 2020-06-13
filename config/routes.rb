@@ -2,9 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'home#index'
   
-  resources :bank_accounts
-  resources :clients do
-    resources :bank_accounts, controller: "clients/bank_accounts", except: [:index, :show, :destroy]
+  resources :bank_accounts, except: [:destroy, :edit, :update]
+
+  resources :users do
+    resources :bank_accounts, controller: "users/bank_accounts" # except: [:index, :show, :destroy]
   end
 
   namespace :api do

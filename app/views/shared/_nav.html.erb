@@ -11,9 +11,7 @@
       <div class="d-sm-none d-lg-inline-block">Witamy, <%= current_user.full_name %></div></a>
       <div class="dropdown-menu dropdown-menu-right">
         <div class="dropdown-title"><%= current_user.email %></div>
-        <a href="features-profile.html" class="dropdown-item has-icon">
-          <i class="far fa-user"></i> Edycja profilu
-        </a>
+        <div class="dropdown-title">id: <%= current_user.id %></div>
         <div class="dropdown-divider"></div>
         <%= link_to destroy_user_session_path, :method => :delete, class: "dropdown-item has-icon text-danger" do %>
           <i class="fas fa-sign-out-alt"></i> Wyloguj się

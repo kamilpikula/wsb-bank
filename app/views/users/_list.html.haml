@@ -1,0 +1,12 @@
+%table.table.table-bordered
+  %thead
+    %tr
+      %th ID konta
+      %th Numer konta
+      %th Nazwisko oraz imię 
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td #{user.show_id}
+        %td #{user.account_number}
+        %td #{user.full_name}

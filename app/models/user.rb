@@ -16,15 +16,27 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :role, presence: true, inclusion: { in: ROLES }
 
+  has_one :bank_accounts
+
   before_validation :load_defaults
+
+  after_commit :create_bank_account, on: :create
+
+  def create_bank_account
+    BankAccount.create!(
+                    id: User.last.id,
+                    user_id: User.last.id,
+                    balance: 0.00,
+                    account_number: SecureRandom.uuid)
+  end
 
   def load_defaults
     if self.new_record?
       self.role = "USER" if self.role.nil?
     end
 
-    self.first_name = first_name.try(:upcase)
-    self.last_name = last_name.try(:upcase)
+    self.first_name = self.first_name.capitalize
+    self.last_name = self.last_name.capitalize
   end
 
   def admin?
@@ -35,8 +47,16 @@ class User < ApplicationRecord
     email
   end
 
+  def show_id
+    id
+  end
+
   def full_name
     "#{last_name} #{first_name}"
+  end
+
+  def account_number
+    BankAccount.where(user_id: id).last.account_number
   end
 
   def full_details

@@ -1,0 +1,31 @@
+.row
+  .col-12
+    .card
+      .card-header
+        %h4 Twoje dane
+      .card-body
+        = simple_form_for user do |f|
+          .row
+            .col-md-12
+              Tu będzie konto bankowe
+          .row
+            .form-group.col-md-6.col-12
+              = f.input :username, input_html: { class: "form-control" } 
+            .form-group.col-md-6.col-12
+              = f.input :email, input_html: { class: "form-control" } 
+          .row
+            .form-group.col-md-6.col-12
+              = f.input :first_name, input_html: { class: "form-control" }
+            .form-group.col-md-6.col-12
+              = f.input :last_name, input_html: { class: "form-control" }
+          .row
+            .form-group.col-md-6.col-12
+              = f.input :password, label: "Nowe hasło", required: false, input_html: { class: "form-control" }
+            .form-group.col-md-6.col-12
+              = f.input :password_confirmation, label: "Potwierdź hasło", required: false, input_html: { class: "form-control" }
+          .card-footer.text-right
+            = button_tag type: :submit,  class: "btn btn-primary" do
+              Zapisz zmiany
+
+            = link_to root_path, class: "btn btn-default" do
+              Anuluj

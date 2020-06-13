@@ -9,9 +9,9 @@ class Client < ApplicationRecord
   before_save :format_name
 
   def format_name
-    self.first_name = self.first_name.upcase
-    self.last_name = self.last_name.upcase
-    self.middle_name = self.middle_name.upcase
+    self.first_name = self.first_name.capitalize
+    self.last_name = self.last_name.capitalize
+    self.middle_name = self.middle_name.capitalize
   end
 
   def num_accounts

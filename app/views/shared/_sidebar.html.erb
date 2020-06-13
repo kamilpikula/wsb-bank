@@ -8,10 +8,22 @@
     </div>
     <ul class="sidebar-menu">
       <li class="menu-header">Panel</li>
-      <li class="active">
+      <li class="<%= controller_name=='home' ? 'active' : '' %>">
         <a href=<%= "#{root_path}" %> class="nav-link">
           <i class="fa fa-home"></i>
           <span class="ml-5">Home</span>
+        </a>
+      </li>
+      <li class="<%= action_name=='index' && controller_name=='users' ? 'active' : '' %>">
+        <a href=<%= "#{users_path}" %> class="nav-link">
+          <i class="fas fa-users"></i>
+          <span class="ml-5">Klienci banku</span>
+        </a>
+      </li>
+      <li class="<%= action_name=='edit' && controller_name=='users' ? 'active' : '' %>">
+        <a href="/users/<%= current_user.id %>/edit" class="nav-link">
+          <i class="fas fa-user-edit"></i>
+          <span class="ml-5">Edycja konta</span>
         </a>
       </li>
     </ul>
