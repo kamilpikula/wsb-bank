@@ -1,0 +1,65 @@
+<div class="section-header">
+  <h1>Dashboard</h1>
+</div>
+<div class="row">
+  <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+    <div class="card card-statistic-1">
+      <div class="card-icon bg-success">
+        <i class="fas fa-search-dollar"></i>
+      </div>
+      <div class="card-wrap">
+        <div class="card-header">
+          <h4>Saldo</h4>
+        </div>
+        <div class="card-body">
+          <%= number_to_currency(BankAccount.where(id: current_user.id).last.balance, :unit => "") %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+    <div class="card card-statistic-1">
+      <div class="card-icon bg-danger">
+        <i class="fas fa-exchange-alt"></i>
+      </div>
+      <div class="card-wrap">
+        <div class="card-header">
+          <h4>Transakcje</h4>
+        </div>
+        <div class="card-body">
+          <%= AccountTransaction.where(bank_account_id: current_user.id).count %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+    <div class="card card-statistic-1">
+      <div class="card-icon bg-warning">
+        <i class="fas fa-hand-holding-usd"></i>
+      </div>
+      <div class="card-wrap">
+        <div class="card-header">
+          <h4>Ost. przelew</h4>
+        </div>
+        <div class="card-body">
+          <%= AccountTransaction.where(bank_account_id: current_user.id).count > 1 ? number_to_currency(AccountTransaction.where(bank_account_id: current_user.id).last.amount, :unit => "") : "0.00" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+    <div class="card card-statistic-1">
+      <div class="card-icon bg-primary">
+        <i class="fas fa-sign-in-alt"></i>
+      </div>
+      <div class="card-wrap">
+        <div class="card-header">
+          <h4>Zalogowania</h4>
+        </div>
+        <div class="card-body">
+          <%= User.where(id: current_user.id).last.sign_in_count%>
+        </div>
+      </div>
+    </div>
+  </div>                  
+</div>

@@ -39,6 +39,7 @@ const Show = (() => {
   const initializeEvents = () => {
     btnNewTransaction.addEventListener("click", () => {
       $("#modal-transaction").on("shown.bs.modal").modal('show');
+      $('#modal-transaction').appendTo("body").modal('show');
     });
     
     btnSave.addEventListener("click", () => {

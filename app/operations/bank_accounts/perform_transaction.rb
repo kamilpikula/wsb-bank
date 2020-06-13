@@ -15,9 +15,9 @@ module BankAccounts
           transaction_type: @transaction_type
         )
 
-        if @transaction_type == "withdraw"
+        if @transaction_type == "wypłata"
           @bank_account.update!(balance: @bank_account.balance - @amount)
-        elsif @transaction_type == "deposit"
+        elsif @transaction_type == "wpłata"
           @bank_account.update!(balance: @bank_account.balance + @amount)
         end
       end

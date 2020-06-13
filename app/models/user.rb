@@ -27,7 +27,18 @@ class User < ApplicationRecord
                     id: User.last.id,
                     user_id: User.last.id,
                     balance: 0.00,
-                    account_number: SecureRandom.uuid)
+                    account_number: generate_account_number)
+  end
+
+  def generate_account_number
+    numbers = "11 2020 "
+    for i in 1..20
+      numbers += SecureRandom.random_number(10).to_s
+      if i%4 == 0 && i != 20
+        numbers += " "
+      end
+    end
+    numbers
   end
 
   def load_defaults

@@ -26,6 +26,12 @@
           <span class="ml-5">Edycja konta</span>
         </a>
       </li>
+      <li class="<%= action_name=='show' && controller_name=='bank_accounts' ? 'active' : '' %>">
+        <a href="<%= bank_account_path(current_user.id) %>" class="nav-link">
+          <i class="fas fa-money-check-alt"></i>
+          <span class="ml-5">Przelewy</span>
+        </a>
+      </li>
     </ul>
   </aside>
   </div>
