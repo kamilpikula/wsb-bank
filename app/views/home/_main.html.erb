@@ -1,0 +1,71 @@
+  <div class="navbar-bg" style="height: 73px;"></div>
+  <nav class="navbar navbar-expand-lg main-navbar mb-5">
+    <a href="<%= root_path %>" class="navbar-brand sidebar-gone-hide">WsbBank</a>
+    <a href="#" class="nav-link sidebar-gone-show" data-toggle="sidebar"><i class="fas fa-bars"></i></a>
+    <div class="nav-collapse">
+      <a class="sidebar-gone-show nav-collapse-toggle nav-link" href="#">
+        <i class="fas fa-ellipsis-v"></i>
+      </a>
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="<%= new_user_session_path %>" class="nav-link">Logowanie</a></li>
+        <li class="nav-item"><a href="<%= new_user_registration_path %>" class="nav-link">Rejestracja</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 mb-4">
+      <div class="hero bg-primary text-white" style="margin-top: 100px">
+        <div class="hero-inner">
+          <h2>Witaj w banku WsbBank!</h2>
+          <p class="lead">Wszystko czego potrzebujesz w jednym koncie osobistym.</p>
+          <p class="lead">Masz konto jakie chcesz - masz warunki.</p>
+          <p class="lead">Zarejestruj się i korzystaj!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-md-4 offset-md-4 col-lg-4 offset-lg-4">
+      <div class="pricing pricing-highlight">
+        <div class="pricing-title">
+          Klient indywidualny
+        </div>
+        <div class="pricing-padding">
+          <div class="pricing-price">
+            <div>0 PLN</div>
+            <div>za rok, na zawsze</div>
+          </div>
+          <div class="pricing-details">
+            <div class="pricing-item">
+              <div class="pricing-item-icon"><i class="fas fa-check"></i></div>
+              <div class="pricing-item-label">konto osobiste</div>
+            </div>
+            <div class="pricing-item">
+              <div class="pricing-item-icon"><i class="fas fa-check"></i></div>
+              <div class="pricing-item-label">darmowe wpłaty i wypłaty</div>
+            </div>
+            <div class="pricing-item">
+              <div class="pricing-item-icon"><i class="fas fa-check"></i></div>
+              <div class="pricing-item-label">karta płatnicza</div>
+            </div>
+            <div class="pricing-item">
+              <div class="pricing-item-icon"><i class="fas fa-check"></i></div>
+              <div class="pricing-item-label">darmowe przelewy</div>
+            </div>
+            <div class="pricing-item">
+              <div class="pricing-item-icon"><i class="fas fa-check"></i></div>
+              <div class="pricing-item-label">wsparcie 24/7</div>
+            </div>
+          </div>
+        </div>
+        <div class="pricing-cta">
+          <a href="<%= new_user_registration_path %>">Rejestracja tutaj <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

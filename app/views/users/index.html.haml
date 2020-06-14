@@ -1,3 +1,4 @@
-%h1 Klienci banku (liczba kont: #{User.count})
-
-= render partial: "list", locals: { users: @users }
+.section-header
+  %h1 Klienci banku (liczba kont: #{User.count})
+.section-body
+  = render partial: "list", locals: { user: @user }

@@ -14,12 +14,13 @@
   <body>
     <div id="app">
       <div class="main-wrapper main-wrapper-1">
+        <% if user_signed_in? %>
+
         <%= render partial: "shared/nav" %>
         <%= render partial: "shared/sidebar" %>
         <div class="main-content">
           <p class="notice"><%= notice %></p>
           <p class="alert"><%= alert %></p>
-
           <section class="section">
             <%= yield %>
           </section>
@@ -29,6 +30,14 @@
             <%= render partial: "shared/footer" %>
           </div>
         </footer>
+        <% else %>
+          <%= render partial: "main" %>
+          <footer class="main-footer">
+            <div class="footer-left">
+              <%= render partial: "shared/footer" %>
+            </div>
+          </footer>
+        <% end %>
       </div>
     </div>
   </body>

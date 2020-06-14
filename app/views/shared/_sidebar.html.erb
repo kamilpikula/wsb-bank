@@ -32,6 +32,12 @@
           <span class="ml-5">Przelewy</span>
         </a>
       </li>
+      <li class="<%= action_name=='index' && controller_name=='contact' ? 'active' : '' %>">
+        <a href="<%= contact_index_path %>" class="nav-link">
+          <i class="far fa-life-ring"></i>
+          <span class="ml-5">Kontakt</span>
+        </a>
+      </li>
     </ul>
   </aside>
   </div>

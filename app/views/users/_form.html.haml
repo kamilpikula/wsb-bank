@@ -7,7 +7,11 @@
         = simple_form_for user do |f|
           .row
             .col-md-12
-              Tu będzie konto bankowe
+              %label#account_number Numer konta
+              %input#account_number{:type=>"text", 
+                     :value => "#{current_user.account_number}", 
+                     :class => "form-control mb-4", 
+                     :disabled => true }
           .row
             .form-group.col-md-6.col-12
               = f.input :username, input_html: { class: "form-control" } 
@@ -27,5 +31,5 @@
             = button_tag type: :submit,  class: "btn btn-primary" do
               Zapisz zmiany
 
-            = link_to root_path, class: "btn btn-default" do
+            = link_to root_path, class: "ml-4 btn btn-light" do
               Anuluj

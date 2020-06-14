@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'home#index'
   
+  resources :contact, only: [:index]
   resources :bank_accounts, except: [:destroy, :edit, :update]
 
   resources :users do
