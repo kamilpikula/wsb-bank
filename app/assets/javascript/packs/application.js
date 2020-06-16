@@ -20,5 +20,7 @@ import "jquery.nicescroll/dist/jquery.nicescroll"
 import 'stisla/assets/js/stisla'
 import 'stisla/assets/js/scripts'
 import 'stisla/assets/js/custom'
+import ApexCharts from 'apexcharts'
+window.ApexCharts = ApexCharts
 
 import "../packs/custom/bank_accounts_show"
