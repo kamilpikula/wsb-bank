@@ -1,9 +1,0 @@
-= simple_form_for [client, bank_account] do |f|
-  = f.input :account_number, input_html: { class: "form-control" }
-  
-  %hr
-  .form-actions
-    = button_tag type: :submit, class: "btn btn-primary" do
-      Zapisz konto bankowe
-  = link_to client_path(client.id), class: "btn btn-secondary" do
-    Anuluj

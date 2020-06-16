@@ -13,7 +13,7 @@
           <h4>Saldo</h4>
         </div>
         <div class="card-body">
-          <%= number_to_currency(BankAccount.where(id: current_user.id).last.balance, :unit => "") %>
+          <%= balance_of_user %>
         </div>
       </div>
     </div>
@@ -28,7 +28,7 @@
           <h4>Transakcje</h4>
         </div>
         <div class="card-body">
-          <%= AccountTransaction.where(bank_account_id: current_user.id).count %>
+          <%= transactions_count %>
         </div>
       </div>
     </div>
@@ -43,7 +43,7 @@
           <h4>Ost. przelew</h4>
         </div>
         <div class="card-body">
-          <%= AccountTransaction.where(bank_account_id: current_user.id).count > 1 ? number_to_currency(AccountTransaction.where(bank_account_id: current_user.id).last.amount, :unit => "") : "0.00" %>
+          <%= last_transaction %>
         </div>
       </div>
     </div>
@@ -58,7 +58,7 @@
           <h4>Zalogowania</h4>
         </div>
         <div class="card-body">
-          <%= User.where(id: current_user.id).last.sign_in_count%>
+          <%= user_sign_in_count %>
         </div>
       </div>
     </div>
