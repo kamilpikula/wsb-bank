@@ -11,7 +11,7 @@ module BankAccounts
     def execute!
       validate_existence_of_account!
 
-      if @transaction_type == "withdraw" and @bank_account.present?
+      if @transaction_type == "wypłata" or @transaction_type == "przelew" and @bank_account.present?
         validate_withdrawal!
       end
 

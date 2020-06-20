@@ -5,6 +5,7 @@ module Api
         amount = params[:amount]
         transaction_type = params[:transactionType]
         bank_account_id = params[:bankAccountId]
+        account_number_transfer = params[:accountNumberTransfer]
         
         errors = ::BankAccounts::ValidateNewTransaction.new(
                    amount: amount,
@@ -18,7 +19,8 @@ module Api
           bank_account = ::BankAccounts::PerformTransaction.new(
                           amount: amount,
                           transaction_type: transaction_type,
-                          bank_account_id: bank_account_id
+                          bank_account_id: bank_account_id,
+                          account_number_transfer: account_number_transfer
                           ).execute!
           
           render json: { balance: bank_account.balance }

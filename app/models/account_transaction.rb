@@ -1,7 +1,7 @@
 class AccountTransaction < ApplicationRecord
   belongs_to :bank_account
 
-  TRANSACTION_TYPES = ["wypłata", "wpłata"]
+  TRANSACTION_TYPES = ["wypłata", "wpłata", "przelew"]
 
   validates :bank_account, presence: true
   validates :amount, presence: true, numericality: true

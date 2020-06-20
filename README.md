@@ -1,6 +1,6 @@
 # WsbBank by Kamil Pikula
 
-Projekt bankowy na przedmiot "programowanie aplikacji internetowych" - WSB Poznań. Projekt został napisany w technologii Ruby on Rails. Funkcjonalności:
+Projekt bankowy na przedmiot "programowanie aplikacji internetowych" - WSB Poznań. Jest to projekt prostej aplikacji bankowości internetowej. Funkcjonalności:
 
   - wpłata i wypłata pieniędzy
   - uwierzytelnianie użytkowników
