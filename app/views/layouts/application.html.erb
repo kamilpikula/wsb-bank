@@ -19,8 +19,9 @@
         <%= render partial: "shared/nav" %>
         <%= render partial: "shared/sidebar" %>
         <div class="main-content">
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
+          <% flash.each do |key, value| %>
+            <div class="alert alert-<%= key == "notice" ? "success" : key %>"><%= value %></div>
+          <% end %>
           <section class="section">
             <%= yield %>
           </section>

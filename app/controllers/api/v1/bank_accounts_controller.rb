@@ -15,6 +15,7 @@ module Api
                   
         if errors.count > 0
           render json: { errors: errors }, status: 402
+          flash[:alert] = "Problem!"
         else
           bank_account = ::BankAccounts::PerformTransaction.new(
                           amount: amount,
@@ -24,6 +25,7 @@ module Api
                           ).execute!
           
           render json: { balance: bank_account.balance }
+          flash[:success] = "Transakcja została wykonana!"
         end
       end
     end

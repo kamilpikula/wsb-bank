@@ -32,3 +32,9 @@
    font-size: 22px;
    font-weight: 900;
  }
+
+ .alert {
+   position: sticky;
+   margin-bottom: 0;
+   z-index: 99;
+ }

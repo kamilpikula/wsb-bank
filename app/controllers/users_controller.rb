@@ -16,8 +16,10 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
+      flash[:success] = "Konto zostało zaktualizowane!"
       redirect_to root_path
     else
+      flash[:alert] = "Pojawił się problem!"
       render "edit"
     end
   end

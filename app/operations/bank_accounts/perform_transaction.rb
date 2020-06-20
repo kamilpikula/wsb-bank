@@ -31,7 +31,6 @@ module BankAccounts
           @bank_account.update!(balance: @bank_account.balance - @amount)
         end
       end
-
       @bank_account
     end
   end

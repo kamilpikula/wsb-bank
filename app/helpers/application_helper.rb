@@ -1,5 +1,14 @@
 module ApplicationHelper
 
+  def flash_class(level)
+    case level
+        when :notice then "alert alert-light"
+        when :success then "alert alert-success"
+        when :error then "alert alert-error"
+        when :alert then "alert alert-error"
+    end
+  end
+
   def balance_of_user
     BankAccount.where(id: current_user.id).last.balance
   end
