@@ -5,8 +5,8 @@
   <div class="card-body">
     <% series = [
       {name: "Przelewy", data: AccountTransaction.where(transaction_type: "przelew").group_by_day(:created_at).count},
-      {name: "Wpłaty", data: AccountTransaction.where(transaction_type: "wypłata").group_by_day(:created_at).count},
-      {name: "Wypłaty", data: AccountTransaction.where(transaction_type: "wpłata").group_by_day(:created_at).count}
+      {name: "Wpłaty", data: AccountTransaction.where(transaction_type: "wpłata").group_by_day(:created_at).count},
+      {name: "Wypłaty", data: AccountTransaction.where(transaction_type: "wypłata").group_by_day(:created_at).count}
       ]
     %> 
     <% options = {

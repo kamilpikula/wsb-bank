@@ -5,8 +5,8 @@
   <div class="card-body">
     <% series = [
       {name: "Przelewy", data: AccountTransaction.where(transaction_type: "przelew").count},
-      {name: "Wpłaty", data: AccountTransaction.where(transaction_type: "wypłata").count},
-      {name: "Wypłaty", data: AccountTransaction.where(transaction_type: "wpłata").count}]
+      {name: "Wpłaty", data: AccountTransaction.where(transaction_type: "wpłata").count},
+      {name: "Wypłaty", data: AccountTransaction.where(transaction_type: "wypłata").count}]
     %> 
     <% options = {
                   theme: 'palette8'
