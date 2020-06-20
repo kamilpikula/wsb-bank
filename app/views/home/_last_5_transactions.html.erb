@@ -1,18 +1,27 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">ID transakcji</th>
-      <th scope="col">Typ</th>
-      <th scope="col">Kwota</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% last_5_transactions.each do |t| %>
-    <tr>
-      <th scope="row"><%= t.id %></th>
-      <td><%= t.transaction_type %></td>
-      <td><%= currency(t.amount) %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="card">
+  <div class="card-header">
+    <h4>Ostatnie 5 transakcji</h4>
+  </div>
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID transakcji</th>
+          <th scope="col">Numer transakcji</th>
+          <th scope="col">Typ</th>
+          <th scope="col">Kwota</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% last_5_transactions.each do |t| %>
+        <tr>
+          <td scope="row"><%= t.id %></td>
+          <td><%= t.transaction_number %></td>
+          <td><%= t.transaction_type %></td>
+          <td><%= currency(t.amount) %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

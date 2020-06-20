@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Liczba transakcji razem</h4>
+  </div>
+  <div class="card-body">
+    <% series = [
+      {name: "Przelewy", data: AccountTransaction.where(transaction_type: "przelew").count},
+      {name: "Wpłaty", data: AccountTransaction.where(transaction_type: "wypłata").count},
+      {name: "Wypłaty", data: AccountTransaction.where(transaction_type: "wpłata").count}]
+    %> 
+    <% options = {
+                  theme: 'palette8'
+    } %>
+    <%= pie_chart(series, options) %>
+  </div>
+  </div>
