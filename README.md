@@ -3,10 +3,12 @@
 Projekt bankowy na przedmiot "programowanie aplikacji internetowych" - WSB Poznań. Jest to projekt prostej aplikacji bankowości internetowej. Funkcjonalności:
 
   - wpłata i wypłata pieniędzy
+  - przelewy
   - uwierzytelnianie użytkowników
   - historia operacji na koncie
   - możliwość edytowania konta
   - autogenerowanie numeru konta podczas rejestracji
+  - wyświetlanie nazwy banku do którego realizowany jest przelew
   - przyjazne UI panelu klienta
   - intuicyjna i prosta nawigacja po aplikacji
   - responsywność
@@ -47,7 +49,7 @@ Logowanie:
 ![aqueous-hollows-11968 herokuapp com_users_sign_in](https://user-images.githubusercontent.com/23015380/84589032-3c332400-ae2c-11ea-856b-3eeee9e4844b.png)
 
 Główny panel użytkownika (statystyki):
-![Główny panel użytkownika (statystyki)](https://user-images.githubusercontent.com/23015380/84589113-d98e5800-ae2c-11ea-8c77-e70e7ccbda93.png)
+![Główny panel użytkownika (statystyki)](https://user-images.githubusercontent.com/23015380/85221418-f938f980-b3b3-11ea-866f-a61cc82581d1.png)
 
 Historia transakcji:
 ![Historia transakcji](https://user-images.githubusercontent.com/23015380/84589155-0e021400-ae2d-11ea-882e-6861cd8333e3.png)
