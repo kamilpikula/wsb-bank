@@ -6,8 +6,8 @@
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">ID transakcji</th>
-          <th scope="col">Numer transakcji</th>
+          <th scope="col" class="d-none d-lg-table-cell">ID transakcji</th>
+          <th scope="col" class="d-none d-lg-table-cell">Numer transakcji</th>
           <th scope="col">Typ</th>
           <th scope="col">Kwota</th>
         </tr>
@@ -15,8 +15,8 @@
       <tbody>
         <% last_5_transactions.each do |t| %>
         <tr>
-          <td scope="row"><%= t.id %></td>
-          <td><%= t.transaction_number %></td>
+          <td scope="row" class="d-none d-lg-table-cell"><%= t.id %></td>
+          <td class="d-none d-lg-table-cell"><%= t.transaction_number %></td>
           <td><%= t.transaction_type %></td>
           <td><%= currency(t.amount) %></td>
         </tr>
