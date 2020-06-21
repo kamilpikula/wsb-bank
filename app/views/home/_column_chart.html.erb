@@ -10,10 +10,7 @@
       ]
     %> 
     <% options = {
-                  xtitle: '.',
-                  yaxis: {
-                    show: false
-                  },
+                  ytitle: 'Suma transakcji',
                   stacked: true,
                   theme: 'palette8',
                   chart: {
@@ -37,6 +34,6 @@
                   defaultLocale: "pl"
                 }
     } %>
-    <%= area_chart(series, options) %>
+    <%= column_chart(series, options) %>
   </div>
   </div>
