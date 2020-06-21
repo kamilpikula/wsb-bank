@@ -9,9 +9,9 @@
       %tr
         %td #{t.created_at.strftime('%d.%m.%Y %H:%M:%S')}
         %td #{t.transaction_type}
-        %td #{number_to_currency(t.amount, unit: "PLN")}
+        %td #{currency(t.amount)}
     
     %tr
       %th
       %th Bilans
-      %th #{number_to_currency(bank_account.balance, unit: "PLN")}
+      %th #{currency(bank_account.balance)}

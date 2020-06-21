@@ -4,16 +4,36 @@
   </div>
   <div class="card-body">
     <% series = [
-      {name: "Przelewy", data: AccountTransaction.where(transaction_type: "przelew").group_by_day(:created_at).count},
-      {name: "Wpłaty", data: AccountTransaction.where(transaction_type: "wpłata").group_by_day(:created_at).count},
-      {name: "Wypłaty", data: AccountTransaction.where(transaction_type: "wypłata").group_by_day(:created_at).count}
+      {name: "Przelewy", data: AccountTransaction.where(transaction_type: "przelew", bank_account_id: current_user.id).group_by_day(:created_at).count},
+      {name: "Wpłaty", data: AccountTransaction.where(transaction_type: "wpłata", bank_account_id: current_user.id).group_by_day(:created_at).count},
+      {name: "Wypłaty", data: AccountTransaction.where(transaction_type: "wypłata", bank_account_id: current_user.id).group_by_day(:created_at).count}
       ]
     %> 
     <% options = {
-                  xtitle: 'Dzień',
+                  xtitle: '.',
                   ytitle: 'Liczba',
                   stacked: true,
-                  theme: 'palette8'
+                  theme: 'palette8',
+                  chart: {
+                  locales: [{
+                    "name": "pl",
+                    "options": {
+                      "shortMonths": ["Sty", "Lut", "Mar", "Kwi", "Maj", "Cze", "Lip", "Sie", "Wrz", "Paź", "Lis", "Gru"],
+                      "toolbar": {
+                          "exportToSVG": "Pobierz SVG",
+                          "exportToPNG": "Pobierz PNG",
+                          "menu": "Menu",
+                          "selection": "Zaznaczenie",
+                          "selectionZoom": "Zaznaczenie zoom",
+                          "zoomIn": "Powiększ",
+                          "zoomOut": "Zmniejsz",
+                          "pan": "Łap",
+                          "reset": "Resetuj zoom"
+                      }
+                    }
+                  }],
+                  defaultLocale: "pl"
+                }
     } %>
     <%= area_chart(series, options) %>
   </div>
