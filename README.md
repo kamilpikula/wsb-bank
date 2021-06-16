@@ -1,6 +1,6 @@
 # WsbBank by Kamil Pikula
 
-Projekt bankowy na przedmiot "programowanie aplikacji internetowych" - WSB Poznań. Jest to projekt prostej aplikacji bankowości internetowej. Funkcjonalności:
+Mini system bankowy stworzony w ramach zaliczeń z zajęć programowania - WSB Poznań. Jest to projekt prostej aplikacji bankowości internetowej. Dzięki tej aplikacji użytkownik może zarządzać swoimi "wirtualnymi" finansami. Potencjalnymi odbiorcami są klienci bankowi. Dla odbiorców są tutaj dwie, główne korzyści: szybkie zarządzanie kontem (wpłata/wypłata/przelew dwoma kliknięciami) oraz przyjazne UI z odpowiednimi wykresami oraz statystykami. Funkcjonalności:
 
   - wpłata i wypłata pieniędzy
   - przelewy
@@ -14,17 +14,23 @@ Projekt bankowy na przedmiot "programowanie aplikacji internetowych" - WSB Pozna
   - responsywność
   - kontakt
 
+## Technologie
+- Ruby on Rails
+- PostgreSQL
+- Stisla Theme + Bootstrap
+
 ## Wersja live
 ##### [KLIKNIJ TUTAJ](https://aqueous-hollows-11968.herokuapp.com/)
 Deploy aplikacji zostały wykonany w serwisie Heroku dla darmowej wersji, więc pierwsze ładowanie może potrwać dłużej.
 
 ## Konto do testowania
 
-W tabeli poniżej znajdują się dane do konta testerskiego na środowisku produkcyjnym (link wyżej). Oczywiście sama rejestracja działa i można założyć swoje własne konto.
+W tabeli poniżej znajdują się dane do kont testerskich na środowisku produkcyjnym (link wyżej). Oczywiście sama rejestracja działa i można założyć swoje własne konto.
 
 | login | hasło |
 | ------ | ------ |
 | user | password |
+| user1 | password |
 
 ## Schemat bazy danych
 Schemat bazy danych (tabele oraz pola) znajdują się w pliku [db/schema.rb](https://github.com/kamilpikula/wsb-bank/blob/master/db/schema.rb)
